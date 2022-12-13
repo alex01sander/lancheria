@@ -19,4 +19,4 @@
       "no-use-before-define": "off",
       "semi": [1, "never"]
     }
-  }
+  } 
