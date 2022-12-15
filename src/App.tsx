@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.css'
-import CustomButton from './components/customButton/custom-button.components'
+import HeaderComponent from './components/header/header.component'
 
 function App () {
   return (
     <div className="App">
-      <CustomButton>Teste</CustomButton>
+      <HeaderComponent/>
+
     </div>
   )
 }
