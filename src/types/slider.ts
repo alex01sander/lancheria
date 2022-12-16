@@ -1,5 +1,6 @@
 interface SliderTypes {
-    imagerUrl: string
+    id:string
+    imageUrl: string
 }
 
 export default SliderTypes

@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import Colors from '../../themes/themes'
 
-export const HeaderImage = styled.div`
-background-image: url(https://brabussp.hamburgueriabrabus.com.br/wp-content/uploads/2020/08/banner-min.jpg);
+interface imageProps{
+    backgroundImage: string
+}
+
+export const HeaderImage = styled.div<imageProps>`
+/* background-image: url(https://brabussp.hamburgueriabrabus.com.br/wp-content/uploads/2020/08/banner-min.jpg); */
+background-image: ${(props) => `url('${props.backgroundImage}')`};
 background-repeat: no-repeat;
     background-size:cover;
     width: 100%;

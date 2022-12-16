@@ -1,9 +1,15 @@
 
+import { FunctionComponent } from 'react'
 import { SwiperSlide } from 'swiper/react'
+import SliderTypes from '../../types/slider'
 import SwipperCoponents from '../swipper/swipper.components'
-import { HeaderContainer, HeaderImage, HeaderImageTeste1, HeaderImageTeste2, HeaderItem, HeaderItems } from './header.styled'
+import { HeaderContainer, HeaderImage, HeaderItem, HeaderItems } from './header.styled'
 
-const HeaderComponent = () => {
+interface SliderProp{
+  slider: SliderTypes
+}
+
+const HeaderComponent: FunctionComponent<SliderProp> = ({ slider }) => {
   const settings = {
     spaceBetween: 50,
     slidePerView: 3,
@@ -15,14 +21,8 @@ const HeaderComponent = () => {
   return (
     <>
     <SwipperCoponents settings={settings}>
-      <SwiperSlide>
-        <HeaderImage/>
-      </SwiperSlide>
-      <SwiperSlide>
-        <HeaderImageTeste1/>
-      </SwiperSlide>
-      <SwiperSlide>
-      <HeaderImageTeste2/>
+      <SwiperSlide >
+        <HeaderImage backgroundImage={slider.imageUrl} />
       </SwiperSlide>
     </SwipperCoponents>
     {/* <HeaderImage/> */}
