@@ -4,14 +4,16 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import store from './store/store'
+import { Store } from './store/store'
+// @ts-ignore
+// import { PersistGate } from 'redux-persist/integration/react'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={Store}>
     <App />
     </Provider>
   </React.StrictMode>
