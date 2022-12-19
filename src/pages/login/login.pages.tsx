@@ -1,6 +1,7 @@
-import React from 'react'
+import CustomButom from '../../components/custom-butom/custom-butom.componensts'
 import HeaderComponents from '../../components/header/header.components'
 import { LoginContainer, LoginContent, LoginHeadline, LoginInputContainer } from './login.pages.styled'
+import { GiPizzaCutter } from 'react-icons/gi'
 
 const LoginPages = () => {
   return (
@@ -12,6 +13,8 @@ const LoginPages = () => {
 
         <LoginInputContainer>email </LoginInputContainer>
         <LoginInputContainer>senha </LoginInputContainer>
+
+        <CustomButom startIcon={<GiPizzaCutter size={25}/>}>Entrar</CustomButom>
         </LoginContent>
 
     </LoginContainer>
