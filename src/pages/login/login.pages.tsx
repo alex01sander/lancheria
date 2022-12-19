@@ -1,7 +1,8 @@
 import CustomButom from '../../components/custom-butom/custom-butom.componensts'
 import HeaderComponents from '../../components/header/header.components'
-import { LoginContainer, LoginContent, LoginHeadline, LoginInputContainer } from './login.pages.styled'
-import { GiPizzaCutter } from 'react-icons/gi'
+import { LoginContainer, LoginContent, LoginHeadline, LoginInputContainer, LoginSubtitle } from './login.pages.styled'
+import { GiPizzaCutter, GiPizzaSlice } from 'react-icons/gi'
+import CustomInput from '../../components/custom-input/custom-input.components'
 
 const LoginPages = () => {
   return (
@@ -9,10 +10,15 @@ const LoginPages = () => {
     <HeaderComponents/>
     <LoginContainer>
         <LoginContent>
-        <LoginHeadline>Entre com a sua conta</LoginHeadline>
-
-        <LoginInputContainer>email </LoginInputContainer>
-        <LoginInputContainer>senha </LoginInputContainer>
+        <LoginHeadline>Cadastre-se</LoginHeadline>
+        <CustomButom startIcon={<GiPizzaSlice size={25}/>}>Cadastrar</CustomButom>
+            <LoginSubtitle>Ou Entre com a sua conta</LoginSubtitle>
+        <LoginInputContainer>
+            <CustomInput placeholder='Digite seu E-mail' hasError={true}/>
+        </LoginInputContainer>
+        <LoginInputContainer>
+            <CustomInput placeholder='Digite sua Senha' hasError={true}/>
+        </LoginInputContainer>
 
         <CustomButom startIcon={<GiPizzaCutter size={25}/>}>Entrar</CustomButom>
         </LoginContent>
