@@ -3,6 +3,7 @@ import Category from '../../types/categories.types'
 import { CategoriesContainer, CategoriesContent } from './categories.styled'
 import axios from 'axios'
 import env from '../../config/env.config'
+import CategoryItem from '../category-item/category-item.components'
 
 const Categories = () => {
   const [categories, setCategories] = useState<Category[]>([])
@@ -25,7 +26,10 @@ const Categories = () => {
   return (
     <CategoriesContainer>
         <CategoriesContent>
-            {/* {categories.map(category => <CategoryItem)} */}
+            {categories.map((category) =>
+           <div key={category.id}>
+              <CategoryItem category={category}/>
+           </div>)}
         </CategoriesContent>
     </CategoriesContainer>
   )
