@@ -6,12 +6,18 @@ import CustomInput from '../../components/custom-input/custom-input.components'
 import { useForm } from 'react-hook-form'
 import InputErroMessage from '../../components/input-error-message/input-error-message'
 import validator from 'validator'
+import { useNavigate } from 'react-router'
 
 const LoginPages = () => {
   const { register, formState: { errors }, handleSubmit } = useForm()
+  const navigate = useNavigate()
 
   const handleSubmitPress = (data: any) => {
     console.log(data)
+  }
+
+  const handleClickSignIn = () => {
+    navigate('/signUp')
   }
 
   console.log(errors)
@@ -22,7 +28,7 @@ const LoginPages = () => {
     <LoginContainer>
         <LoginContent>
         <LoginHeadline>Cadastre-se</LoginHeadline>
-        <CustomButom startIcon={<GiPizzaSlice size={25}/>}>Cadastrar</CustomButom>
+        <CustomButom startIcon={<GiPizzaSlice size={25}/>}onClick={handleClickSignIn}>Cadastrar</CustomButom>
             <LoginSubtitle>Ou Entre com a sua conta</LoginSubtitle>
         <LoginInputContainer>
             <p>E-mail</p>
