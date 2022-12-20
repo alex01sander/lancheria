@@ -8,8 +8,13 @@ import InputErroMessage from '../../components/input-error-message/input-error-m
 import validator from 'validator'
 import { useNavigate } from 'react-router'
 
+interface loginProps{
+  email: string
+  password: string
+}
+
 const LoginPages = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm()
+  const { register, formState: { errors }, handleSubmit } = useForm<loginProps>()
   const navigate = useNavigate()
 
   const handleSubmitPress = (data: any) => {
