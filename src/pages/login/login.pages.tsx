@@ -4,6 +4,8 @@ import { LoginContainer, LoginContent, LoginHeadline, LoginInputContainer, Login
 import { GiPizzaCutter, GiPizzaSlice } from 'react-icons/gi'
 import CustomInput from '../../components/custom-input/custom-input.components'
 import { useForm } from 'react-hook-form'
+import InputErroMessage from '../../components/input-error-message/input-error-message'
+import validator from 'validator'
 
 const LoginPages = () => {
   const { register, formState: { errors }, handleSubmit } = useForm()
@@ -26,13 +28,30 @@ const LoginPages = () => {
             <p>E-mail</p>
             <CustomInput hasError={!!errors?.email}
             placeholder='Digite seu E-mail' {...register('email',
-              { required: true })}/>
+              {
+                required: true,
+                validate: (value) => {
+                  return validator.isEmail(value)
+                }
+              })}/>
+
+            {errors?.email?.type === 'required' && (
+                <InputErroMessage>O email é obrigatório</InputErroMessage>
+            )}
+
+            {errors?.email?.type === 'validate' && (
+                <InputErroMessage>O email não é valido</InputErroMessage>
+            )}
         </LoginInputContainer>
         <LoginInputContainer>
             <p>Senha</p>
             <CustomInput hasError={!!errors?.password}
             placeholder='Digite sua Senha' {...register('password',
               { required: true })}/>
+
+            {errors?.password?.type === 'required' && (
+                <InputErroMessage>A senha é obrigatória</InputErroMessage>
+            )}
         </LoginInputContainer>
 
         <CustomButom startIcon={<GiPizzaCutter size={25}/>}
