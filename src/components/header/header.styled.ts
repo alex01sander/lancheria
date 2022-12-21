@@ -15,6 +15,7 @@ export const HeaderContainer = styled.div`
         justify-content: center;
     }
 `
+
 export const HeaderTile = styled.div`
     font-weight: bold;
     /* font-size: 1.5rem; */

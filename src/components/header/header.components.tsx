@@ -10,6 +10,7 @@ const HeaderComponents = () => {
   }
 
   return (
+    <>
     <HeaderContainer>
         <HeaderItem>
             <HeaderItems>Home</HeaderItems>
@@ -20,6 +21,7 @@ const HeaderComponents = () => {
         </HeaderItem>
         <HeaderTile onClick={handleClickLogin}>Login/SignIn</HeaderTile>
     </HeaderContainer>
+    </>
   )
 }
 

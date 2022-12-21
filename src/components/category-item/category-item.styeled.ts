@@ -12,7 +12,8 @@ export const CategoryItemContainer = styled.div<CategoryItemContainerProps>`
     width: 100%;
     height: 100%;
     background-color: red;
-    grid-gap: 15px;
+    padding:30px;
+    /* grid-gap: 15px; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
