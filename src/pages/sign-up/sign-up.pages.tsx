@@ -7,14 +7,17 @@ import { MdFastfood } from 'react-icons/md'
 import { useForm } from 'react-hook-form'
 import validator from 'validator'
 import InputErroMessage from '../../components/input-error-message/input-error-message'
+import { auth, db } from '../../config/firebase.config'
+import { addDoc, collection } from '@firebase/firestore'
+import { createUserWithEmailAndPassword } from '@firebase/auth'
 
 interface SignUpForm {
     name: string
     email: string
-    endereço: string
+    address: string
     house: string
-    referencia: string
-    telefone: string
+    lastName: string
+    phone: string
     password: string
     passwordConfirmation: string
 }
@@ -22,12 +25,29 @@ interface SignUpForm {
 const SignUp = () => {
   const { register, formState: { errors }, handleSubmit, watch } = useForm<SignUpForm>()
 
-  const handleSubmitPress = (data: SignUpForm) => {
-    console.log(data)
+  const handleSubmitPress = async (data: SignUpForm) => {
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(auth, data.email, data.password)
+
+      console.log(userCredentials)
+      await addDoc(collection(db, 'users  '), {
+        id: userCredentials.user.uid,
+        name: data.name,
+        house: data.house,
+        // lastName: data.lastName,
+        phone: data.phone,
+        address: data.address,
+        email: userCredentials.user.email
+
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
   const watchPassword = watch('password')
 
   console.log(errors)
+
   return (
     <>
     <HeaderComponents/>
@@ -62,10 +82,10 @@ const SignUp = () => {
             </SignUpInputContainer>
             <SignUpInputContainer>
                 <p>Endereço</p>
-               <CustomInput hasError={!!errors?.endereço}
-               placeholder='Digite seu endereço *'{...register('endereço',
+               <CustomInput hasError={!!errors?.address}
+               placeholder='Digite seu endereço *'{...register('address',
                  { required: true })}/>
-               {errors?.endereço?.type === 'required' && (
+               {errors?.address?.type === 'required' && (
               <InputErroMessage>O endereço é obrigatório</InputErroMessage>
                )}
             </SignUpInputContainer>
@@ -85,10 +105,10 @@ const SignUp = () => {
             </SignUpInputContainer>
             <SignUpInputContainer>
                 <p>Numero do telefone</p>
-               <CustomInput hasError={!!errors?.telefone}
-                placeholder='Digite o numero do telefone (ddd) *' {...register('telefone',
+               <CustomInput hasError={!!errors?.phone}
+                placeholder='Digite o numero do telefone (ddd) *' {...register('phone',
                   { required: true })}/>
-                 {errors?.telefone?.type === 'required' && (
+                 {errors?.phone?.type === 'required' && (
               <InputErroMessage>O numero do telefone é obrigatorio</InputErroMessage>
                  )}
             </SignUpInputContainer>
