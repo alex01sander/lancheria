@@ -9,7 +9,7 @@ import validator from 'validator'
 import InputErroMessage from '../../components/input-error-message/input-error-message'
 import { auth, db } from '../../config/firebase.config'
 import { addDoc, collection } from '@firebase/firestore'
-import { createUserWithEmailAndPassword } from '@firebase/auth'
+import { AuthError, AuthErrorCodes, createUserWithEmailAndPassword } from '@firebase/auth'
 
 interface SignUpForm {
     name: string
@@ -23,7 +23,7 @@ interface SignUpForm {
 }
 
 const SignUp = () => {
-  const { register, formState: { errors }, handleSubmit, watch } = useForm<SignUpForm>()
+  const { register, formState: { errors }, handleSubmit, watch, setError } = useForm<SignUpForm>()
 
   const handleSubmitPress = async (data: SignUpForm) => {
     try {
@@ -41,7 +41,11 @@ const SignUp = () => {
 
       })
     } catch (error) {
-      console.log(error)
+      const _error = error as AuthError
+
+      if (_error.code === AuthErrorCodes.EMAIL_EXISTS) {
+        return setError('email', { type: 'alreadyInUse' })
+      }
     }
   }
   const watchPassword = watch('password')
@@ -74,6 +78,10 @@ const SignUp = () => {
                })}/>
             {errors?.email?.type === 'required' && (
                 <InputErroMessage>O email é obrigatório</InputErroMessage>
+            )}
+
+            {errors?.email?.type === 'alreadyInUse' && (
+                <InputErroMessage>Esse Email já existe</InputErroMessage>
             )}
 
                 {errors?.email?.type === 'validate' && (
@@ -116,10 +124,13 @@ const SignUp = () => {
             <p>Senha</p>
             <CustomInput hasError={!!errors?.password}
             placeholder='Digite sua Senha' type='password' {...register('password',
-              { required: true })}/>
+              { required: true, minLength: 6 })}/>
 
             {errors?.password?.type === 'required' && (
                 <InputErroMessage>A senha é obrigatória</InputErroMessage>
+            )}
+            {errors?.password?.type === 'minLength' && (
+                <InputErroMessage>A senha precisa ter masi de 6 caracteres</InputErroMessage>
             )}
 
             </SignUpInputContainer>
@@ -129,6 +140,7 @@ const SignUp = () => {
               placeholder='Confirme sua Senha' type='password' {...register('passwordConfirmation',
                 {
                   required: true,
+                  minLength: 6,
                   validate: (value) => {
                     return value === watchPassword
                   }
@@ -138,6 +150,9 @@ const SignUp = () => {
              )}
              {errors?.passwordConfirmation?.type === 'validate' && (
                 <InputErroMessage>As senhas estão diferentes</InputErroMessage>
+             )}
+             {errors?.passwordConfirmation?.type === 'minLength' && (
+                <InputErroMessage>A senha precisa ter masi de 6 caracteres</InputErroMessage>
              )}
             </SignUpInputContainer>
                 <CustomButom startIcon={<MdFastfood size={20}/>}
