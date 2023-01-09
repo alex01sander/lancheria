@@ -11,11 +11,15 @@ const HeaderComponents = () => {
     navigate('/login')
   }
 
+  const handleClickHome = () => {
+    navigate('/')
+  }
+
   return (
     <>
     <HeaderContainer>
         <HeaderItem>
-            <HeaderItems>Home</HeaderItems>
+            <HeaderItems onClick={handleClickHome}>Home</HeaderItems>
             <HeaderItems>Xis</HeaderItems>
             <HeaderItems>Hambuerguer</HeaderItems>
             <HeaderItems>Pizza</HeaderItems>
