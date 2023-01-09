@@ -7,6 +7,8 @@ import { useForm } from 'react-hook-form'
 import InputErroMessage from '../../components/input-error-message/input-error-message'
 import validator from 'validator'
 import { useNavigate } from 'react-router'
+import { AuthError, AuthErrorCodes, signInWithEmailAndPassword } from '@firebase/auth'
+import { auth } from '../../config/firebase.config'
 
 interface loginProps{
   email: string
@@ -14,11 +16,25 @@ interface loginProps{
 }
 
 const LoginPages = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm<loginProps>()
+  const { register, formState: { errors }, handleSubmit, setError } = useForm<loginProps>()
   const navigate = useNavigate()
 
-  const handleSubmitPress = (data: any) => {
-    console.log(data)
+  const handleSubmitPress = async (data: loginProps) => {
+    try {
+      const userCredentials = await signInWithEmailAndPassword(auth, data.email, data.password)
+
+      console.log(userCredentials)
+    } catch (error) {
+      const _error = error as AuthError
+
+      if (_error.code === AuthErrorCodes.INVALID_PASSWORD) {
+        return setError('password', { type: 'mismatch' })
+      }
+
+      if (_error.code === AuthErrorCodes.USER_DELETED) {
+        return setError('email', { type: 'notFound' })
+      }
+    }
   }
 
   const handleClickSignIn = () => {
@@ -53,16 +69,22 @@ const LoginPages = () => {
             {errors?.email?.type === 'validate' && (
                 <InputErroMessage>O email não é valido</InputErroMessage>
             )}
+            {errors?.email?.type === 'notFound' && (
+                <InputErroMessage>O email não foi encontrado</InputErroMessage>
+            )}
         </LoginInputContainer>
         <LoginInputContainer>
             <p>Senha</p>
             <CustomInput hasError={!!errors?.password}
-            placeholder='Digite sua Senha' {...register('password',
+            placeholder='Digite sua Senha' type='password' {...register('password',
               { required: true })}/>
 
             {errors?.password?.type === 'required' && (
                 <InputErroMessage>A senha é obrigatória</InputErroMessage>
             )}
+             {errors?.password?.type === 'mismatch' && (
+                <InputErroMessage>Senha Inválida</InputErroMessage>
+             )}
         </LoginInputContainer>
 
         <CustomButom startIcon={<GiPizzaCutter size={25}/>}
