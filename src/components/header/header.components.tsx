@@ -1,6 +1,8 @@
 import React from 'react'
 import { HeaderContainer, HeaderItem, HeaderItems, HeaderTile } from './header.styled'
 import { useNavigate } from 'react-router-dom'
+import { signOut } from '@firebase/auth'
+import { auth } from '../../config/firebase.config'
 
 const HeaderComponents = () => {
   const navigate = useNavigate()
@@ -20,6 +22,7 @@ const HeaderComponents = () => {
             <HeaderItems>Bebidas</HeaderItems>
         </HeaderItem>
         <HeaderTile onClick={handleClickLogin}>Login/SignIn</HeaderTile>
+        <HeaderTile onClick={() => signOut(auth)}>Sair</HeaderTile>
     </HeaderContainer>
     </>
   )

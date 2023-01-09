@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
     width: 100%;
     background-color: ${Colors.background.dark};
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
     color: ${Colors.text.white};
 
@@ -19,6 +19,7 @@ export const HeaderContainer = styled.div`
 export const HeaderTile = styled.div`
     font-weight: bold;
     /* font-size: 1.5rem; */
+    margin-left:15px;
     &:hover{
         cursor: pointer;
     }
