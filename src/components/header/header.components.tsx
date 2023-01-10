@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { HeaderContainer, HeaderItem, HeaderItems, HeaderTile } from './header.styled'
 import { useNavigate } from 'react-router-dom'
 import { signOut } from '@firebase/auth'
 import { auth } from '../../config/firebase.config'
+import { UserContext } from '../../contexts/user.contexts'
 
 const HeaderComponents = () => {
+  const { isAuthenticated } = useContext(UserContext)
+
   const navigate = useNavigate()
 
   const handleClickLogin = () => {
@@ -25,8 +28,13 @@ const HeaderComponents = () => {
             <HeaderItems>Pizza</HeaderItems>
             <HeaderItems>Bebidas</HeaderItems>
         </HeaderItem>
-        <HeaderTile onClick={handleClickLogin}>Login/SignIn</HeaderTile>
+        {!isAuthenticated && (
+          <HeaderTile onClick={handleClickLogin}>Entrar ou Cadastrar </HeaderTile>
+        )}
+        {isAuthenticated && (
         <HeaderTile onClick={() => signOut(auth)}>Sair</HeaderTile>
+
+        )}
     </HeaderContainer>
     </>
   )
