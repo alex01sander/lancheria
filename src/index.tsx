@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import UserContextProvider from './contexts/user.contexts'
 // @ts-ignore
 // import { PersistGate } from 'redux-persist/integration/react'
 
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 )
 root.render(
   <React.StrictMode>
+    <UserContextProvider>
     <App />
+    </UserContextProvider>
   </React.StrictMode>
 )
 
