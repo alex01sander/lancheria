@@ -9,6 +9,9 @@ import validator from 'validator'
 import { useNavigate } from 'react-router'
 import { AuthError, AuthErrorCodes, signInWithEmailAndPassword } from '@firebase/auth'
 import { auth } from '../../config/firebase.config'
+import SliderComponents from '../../components/slider/slider/slider.components'
+import { useContext, useEffect } from 'react'
+import { UserContext } from '../../contexts/user.contexts'
 
 interface loginProps{
   email: string
@@ -17,7 +20,15 @@ interface loginProps{
 
 const LoginPages = () => {
   const { register, formState: { errors }, handleSubmit, setError } = useForm<loginProps>()
+
+  const { isAuthenticated } = useContext(UserContext)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/')
+    }
+  }, [isAuthenticated])
 
   const handleSubmitPress = async (data: loginProps) => {
     try {
@@ -45,6 +56,7 @@ const LoginPages = () => {
 
   return (
     <>
+    <SliderComponents/>
     <HeaderComponents/>
     <LoginContainer>
         <LoginContent>

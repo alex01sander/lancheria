@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import CustomButom from '../../components/custom-butom/custom-butom.componensts'
 import CustomInput from '../../components/custom-input/custom-input.components'
 import HeaderComponents from '../../components/header/header.components'
@@ -10,6 +10,9 @@ import InputErroMessage from '../../components/input-error-message/input-error-m
 import { auth, db } from '../../config/firebase.config'
 import { addDoc, collection } from '@firebase/firestore'
 import { AuthError, AuthErrorCodes, createUserWithEmailAndPassword } from '@firebase/auth'
+import SliderComponents from '../../components/slider/slider/slider.components'
+import { useNavigate } from 'react-router'
+import { UserContext } from '../../contexts/user.contexts'
 
 interface SignUpForm {
     name: string
@@ -49,11 +52,19 @@ const SignUp = () => {
     }
   }
   const watchPassword = watch('password')
+  const navigate = useNavigate()
+  const { isAuthenticated } = useContext(UserContext)
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/')
+    }
+  }, [isAuthenticated])
   console.log(errors)
 
   return (
     <>
+    <SliderComponents/>
     <HeaderComponents/>
     <SignUpContainer>
         <SignUpContent>
