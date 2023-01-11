@@ -29,7 +29,7 @@ const HeaderComponents = () => {
             <HeaderItems>Bebidas</HeaderItems>
         </HeaderItem>
         {!isAuthenticated && (
-          <HeaderTile onClick={handleClickLogin}>Entrar ou Cadastrar </HeaderTile>
+          <HeaderTile onClick={handleClickLogin}>Entrar ou Cadastrar</HeaderTile>
         )}
         {isAuthenticated && (
         <HeaderTile onClick={() => signOut(auth)}>Sair</HeaderTile>
