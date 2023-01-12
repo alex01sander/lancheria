@@ -10,8 +10,9 @@ import { useNavigate } from 'react-router'
 import { AuthError, AuthErrorCodes, signInWithEmailAndPassword } from '@firebase/auth'
 import { auth } from '../../config/firebase.config'
 import SliderComponents from '../../components/slider/slider/slider.components'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../contexts/user.contexts'
+import Loading from '../../components/loading/loading.components'
 
 interface loginProps{
   email: string
@@ -23,6 +24,7 @@ const LoginPages = () => {
 
   const { isAuthenticated } = useContext(UserContext)
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -32,6 +34,7 @@ const LoginPages = () => {
 
   const handleSubmitPress = async (data: loginProps) => {
     try {
+      setIsLoading(true)
       const userCredentials = await signInWithEmailAndPassword(auth, data.email, data.password)
 
       console.log(userCredentials)
@@ -45,6 +48,8 @@ const LoginPages = () => {
       if (_error.code === AuthErrorCodes.USER_DELETED) {
         return setError('email', { type: 'notFound' })
       }
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -56,6 +61,7 @@ const LoginPages = () => {
 
   return (
     <>
+    {isLoading && <Loading/>}
     <SliderComponents/>
     <HeaderComponents/>
     <LoginContainer>

@@ -3,6 +3,7 @@ import { collection, getDocs, query, where } from '@firebase/firestore'
 import { FunctionComponent, useContext, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Loading from './components/loading/loading.components'
 import { auth, db } from './config/firebase.config'
 import { UserContext } from './contexts/user.contexts'
 import HomePages from './pages/home/home.pages'
@@ -32,7 +33,7 @@ const App: FunctionComponent = () => {
     return setIsInitializing(false)
   })
 
-  if (isInitializing) return null
+  if (isInitializing) return <Loading/>
   return (
       <BrowserRouter>
         <Routes>
