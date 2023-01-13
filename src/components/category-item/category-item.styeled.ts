@@ -9,15 +9,15 @@ export const CategoryItemContainer = styled.div<CategoryItemContainerProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 70%;
     background-color: red;
     padding:30px;
-    /* grid-gap: 15px; */
+    /* gap: 45px; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: color;

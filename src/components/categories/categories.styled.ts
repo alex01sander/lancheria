@@ -13,7 +13,7 @@ export const CategoriesContent = styled.div`
     display: flex;
     justify-content:center;
     padding: 30px;
-    gap:10px;
+    gap:80px;
 
     /* & div :nth-child(1) 
     & div:nth-child(2) 

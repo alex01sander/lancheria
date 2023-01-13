@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CustomButom from '../../components/custom-butom/custom-butom.componensts'
 import CustomInput from '../../components/custom-input/custom-input.components'
 import HeaderComponents from '../../components/header/header.components'
@@ -13,6 +13,7 @@ import { AuthError, AuthErrorCodes, createUserWithEmailAndPassword } from '@fire
 import SliderComponents from '../../components/slider/slider/slider.components'
 import { useNavigate } from 'react-router'
 import { UserContext } from '../../contexts/user.contexts'
+import Loading from '../../components/loading/loading.components'
 
 interface SignUpForm {
     name: string
@@ -27,9 +28,11 @@ interface SignUpForm {
 
 const SignUp = () => {
   const { register, formState: { errors }, handleSubmit, watch, setError } = useForm<SignUpForm>()
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmitPress = async (data: SignUpForm) => {
     try {
+      setIsLoading(true)
       const userCredentials = await createUserWithEmailAndPassword(auth, data.email, data.password)
 
       console.log(userCredentials)
@@ -49,6 +52,8 @@ const SignUp = () => {
       if (_error.code === AuthErrorCodes.EMAIL_EXISTS) {
         return setError('email', { type: 'alreadyInUse' })
       }
+    } finally {
+      setIsLoading(false)
     }
   }
   const watchPassword = watch('password')
@@ -66,6 +71,7 @@ const SignUp = () => {
     <>
     <SliderComponents/>
     <HeaderComponents/>
+    {isLoading && <Loading/>}
     <SignUpContainer>
         <SignUpContent>
         <SignUpHeadline>Faça seu Cadastro</SignUpHeadline>
