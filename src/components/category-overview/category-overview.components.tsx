@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import Category from '../../types/categories.types'
+import ProductItem from '../product-iten/product-item.components'
 import { CategoryContainer, CategoryTitle, ProductContainer } from './category-overview.styled'
 
 interface CategoryOverviewProps{
@@ -10,7 +11,10 @@ const CategoryOverview: FunctionComponent<CategoryOverviewProps> = ({ category }
         <CategoryContainer>
             <CategoryTitle>{category.displayName}</CategoryTitle>
 
-            <ProductContainer></ProductContainer>
+            <ProductContainer>
+              {category.products.slice(0, 4).map(product =>
+                 <ProductItem key={product.id} product={product}/>)}
+            </ProductContainer>
         </CategoryContainer>
   )
 }
