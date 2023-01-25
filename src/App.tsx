@@ -6,6 +6,7 @@ import './App.css'
 import Loading from './components/loading/loading.components'
 import { auth, db } from './config/firebase.config'
 import { UserContext } from './contexts/user.contexts'
+import CategoryDetailsPage from './pages/category-details/category-details.page'
 import HomePages from './pages/home/home.pages'
 import LoginPages from './pages/login/login.pages'
 import SignUp from './pages/sign-up/sign-up.pages'
@@ -38,6 +39,7 @@ const App: FunctionComponent = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePages/>}/>
+          <Route path='/category:id' element={<CategoryDetailsPage/>}/>
           <Route path='/login' element={<LoginPages/>}/>
           <Route path='/signUp' element={<SignUp/>}/>
         </Routes>
