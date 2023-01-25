@@ -7,6 +7,9 @@ interface ProductImageProps {
 export const ProductContainer = styled.div`
     display: flex;
     flex-direction: column;
+    /* background-color:#B22222; */
+    /* border-radius: 10px; */
+
 `
 export const ProductInfo = styled.div`
     display: flex;
@@ -21,11 +24,12 @@ export const ProductInfo = styled.div`
 
 export const ProductImage = styled.div<ProductImageProps>`
     background-image: ${(props) => `url('${props.imageUrl}')`};
-    height: 380px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
+    
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 `

@@ -39,7 +39,7 @@ const App: FunctionComponent = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePages/>}/>
-          <Route path='/category:id' element={<CategoryDetailsPage/>}/>
+          <Route path='/category/:id' element={<CategoryDetailsPage/>}/>
           <Route path='/login' element={<LoginPages/>}/>
           <Route path='/signUp' element={<SignUp/>}/>
         </Routes>

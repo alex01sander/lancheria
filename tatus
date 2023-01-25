@@ -1,0 +1,251 @@
+[33mcommit b1eacbd3e1802771519c4e787add2aa48ef2b6cf[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Sat Jan 14 16:50:07 2023 -0300
+
+    feat: add Product item
+
+[33mcommit 4f804c698b625ce01f00aa1ac6322da4e061025c[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Sat Jan 14 15:36:57 2023 -0300
+
+    feat: add Category overview components
+
+[33mcommit aa10e0e0953747373987358271f719a7a25a291c[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Sat Jan 14 15:23:30 2023 -0300
+
+    feat: add Categories overview components
+
+[33mcommit 74453270cc0e3639adc0432eadc75595430946a6[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Fri Jan 13 20:44:01 2023 -0300
+
+    fix: update styles
+
+[33mcommit d8030949b8cdcae1426e19c17cddc965d603a4e4[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Fri Jan 13 20:43:29 2023 -0300
+
+    feat: add Context
+
+[33mcommit a2b4ac622560a75765a2fee7a0c725f2cd79df0a[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Thu Jan 12 20:08:18 2023 -0300
+
+    feat: add spinners para melhorar a tela de carregamento
+
+[33mcommit 4f815ac23bfe02b35b14ea791e16dae52a4eeafb[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Thu Jan 12 20:07:07 2023 -0300
+
+    feat: add loading ao logar
+
+[33mcommit e225bf85915d56e2a4654cd97e253e8111a601eb[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Wed Jan 11 19:50:06 2023 -0300
+
+    feat: redirecionamento ao logar e cadastrar para home
+
+[33mcommit 515a352da46db04a05030e13ec3e20769f403a0d[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Wed Jan 11 19:49:16 2023 -0300
+
+    feat: initiallizing no app
+
+[33mcommit c009a2c6500db070b80ff224b7cb25c5169ba38c[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Wed Jan 11 19:21:06 2023 -0300
+
+    fix: correção na escrita
+
+[33mcommit 152e49f0932c7bf5f9d735f6203db78cb69e6b35[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Jan 10 19:48:43 2023 -0300
+
+    feat: add interação dos botões de login e logout para usuario autenticado
+
+[33mcommit c7b13e9e1434a59d19eb2318551a8f41b93d469b[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Jan 10 19:44:23 2023 -0300
+
+    feat: add User Context update onAuthStateChanged no login
+
+[33mcommit 7e72fee57243691e845c0f1c031a6a22d57dab64[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Jan 10 19:29:21 2023 -0300
+
+    feat: add User Context
+
+[33mcommit bf1ac9da59bfbead415bc05fd5bdc4048dd5e996[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Jan 9 19:34:15 2023 -0300
+
+    feat: navigate no home
+
+[33mcommit 68ec3358d8c963366f342a18704b94a87db41c6e[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Jan 9 19:26:32 2023 -0300
+
+    feat: auth state listener and sign out button
+
+[33mcommit 88d60387dc424d77ef699807246f68f08e98330f[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Jan 9 19:25:24 2023 -0300
+
+    feat: validação de conta com firebase
+
+[33mcommit a841604ee65bb71e422e3881f0959f100011236d[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Sat Jan 7 15:15:41 2023 -0300
+
+    feat: validação de conta com firebase
+
+[33mcommit ebc33c37cf8729eee984ab810fcb2ded09790b7c[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Fri Jan 6 19:47:18 2023 -0300
+
+    feat: add Types product
+
+[33mcommit 389ffe2676f76c4d11f2001b33216260d9dd032c[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Fri Dec 23 17:09:59 2022 -0300
+
+    feat: add inicialização do firebase com autenticção
+
+[33mcommit b8800e2a2e9146a7cb692daee5e9b08adfd1944f[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Wed Dec 21 17:56:43 2022 -0300
+
+    feat: add Slider no Header
+
+[33mcommit 1426d8574fbbd2206ff000231d4227ed01e7a98c[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Wed Dec 21 17:55:55 2022 -0300
+
+    feat: add firebase como banco de dados no categories
+
+[33mcommit 50a25785b8ffac66440a4929dd88f1e6e778e5e6[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 20 19:47:47 2022 -0300
+
+    feat: add types login hook form
+
+[33mcommit a661ffa50ffd320671de9fbae21065a13105784f[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 20 19:30:41 2022 -0300
+
+    feat: add Sign Up e validação de inputs
+
+[33mcommit fe6aacf27238c6cb4542a0c95c0785b1148dca42[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 20 12:21:14 2022 -0300
+
+    feat: add validação de email
+
+[33mcommit e757ccda03cffc0688363ed93146d6d9aad094e6[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 20 09:45:58 2022 -0300
+
+    feat: add validação hook form login
+
+[33mcommit 7d42cb06b115cae26decef3a56cf71ebac5f75dd[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 17:41:54 2022 -0300
+
+    feat: add Custom Buttom
+
+[33mcommit 3d1057a6b5fa73537e08d2df33686d6d567d8ad6[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 16:10:07 2022 -0300
+
+    feat: add Custom Buttom
+
+[33mcommit b8c194a96fdd6fa9f75969cbbc35935ff1d73969[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 15:16:05 2022 -0300
+
+    feat: add React hook form e initial login pages
+
+[33mcommit 0b02c95a86a985647daab25a110fdc9b95884c02[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 11:22:31 2022 -0300
+
+    feat: add Category item
+
+[33mcommit c3f2901be162f6f266709b468a260d9d4905e4c1[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 11:03:45 2022 -0300
+
+    feat: add Categories
+
+[33mcommit 5f1ec55e9082e33cbf96e06c15555ab9b4e4511f[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 10:33:59 2022 -0300
+
+    feat: add Header Components
+
+[33mcommit 7ec63a6697bf29ebc293f7a0af0ee61100fc1a49[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Mon Dec 19 10:02:07 2022 -0300
+
+    fix: update
+
+[33mcommit c107a52f02c30f1e5393a0bf434919576bb10cc2[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Thu Dec 15 23:12:55 2022 -0300
+
+    feat: add Redux no Slider
+
+[33mcommit f7b145f234de7a8a0e05b61a9746cea7c472fdc7[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Thu Dec 15 20:19:33 2022 -0300
+
+    feat: add Config Redux React-redux
+
+[33mcommit 330c224dcabc15709478364d37f16d55f1260f0d[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Thu Dec 15 19:09:14 2022 -0300
+
+    feat: add React-Router-dom
+
+[33mcommit e335a7a52ae0a8ecc4f183e7af6da33b7feeb9c4[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Thu Dec 15 00:06:04 2022 -0300
+
+    feat: add Header e Swiper para slides
+
+[33mcommit 2925826eb6f4ef2a731e0c697b67ecb34ddb46cb[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 13 20:25:18 2022 -0300
+
+    feat: config eslint parser
+
+[33mcommit 689be734fceaa04e04ae317416381567cd0b6777[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 13 19:45:45 2022 -0300
+
+    feat: config eslint parser
+
+[33mcommit 13f8524510e41b037d13682a915dc5805c4465af[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 13 19:45:12 2022 -0300
+
+    feat: add styled componentes
+
+[33mcommit 3d0402d6667994ea8cd1e61cef8fd2e5c890cd62[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 13 19:12:05 2022 -0300
+
+    chore: add git commit message linter setup
+
+[33mcommit f56e56f990551c66c448fab108bdc5a63689564d[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 13 18:59:26 2022 -0300
+
+    First commit
+
+[33mcommit 0b7b70fa9769a6d598e2de1928d553205ad99bc7[m
+Author: Alex Sander <alexsander01@hotmail.com.br>
+Date:   Tue Dec 13 18:24:13 2022 -0300
+
+    Initialize project using Create React App
