@@ -16,6 +16,7 @@ const CategorieOverview: FunctionComponent = () => {
         {categories.map((category) => (
             <CategoryOverview key={category.id} category={category}/>
         ))}
+
     </Container>
   )
 }

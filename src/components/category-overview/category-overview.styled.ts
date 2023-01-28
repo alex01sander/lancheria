@@ -7,8 +7,12 @@ width: 100%;
 margin-top: 20px;
 `
 export const CategoryTitle = styled.p`
-font-size: 500;
-margin-bottom: 5px;
+display:flex;
+font-size: 21px;
+margin: 5px;
+padding:5px;
+color:red;
+
 `
 export const ProductContainer = styled.div`
 display: flex;
