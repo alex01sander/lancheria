@@ -5,6 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import UserContextProvider from './contexts/user.contexts'
 import CategoryContextProvider from './contexts/category.context'
+import CartContextProvider from './contexts/cart.context'
 // @ts-ignore
 // import { PersistGate } from 'redux-persist/integration/react'
 
@@ -15,7 +16,9 @@ root.render(
   <React.StrictMode>
     <UserContextProvider>
       <CategoryContextProvider>
-    <App />
+      <CartContextProvider>
+      <App />
+      </CartContextProvider>
       </CategoryContextProvider>
     </UserContextProvider>
   </React.StrictMode>
