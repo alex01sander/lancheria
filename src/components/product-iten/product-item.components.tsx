@@ -1,4 +1,5 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useContext } from 'react'
+import { CartContext } from '../../contexts/cart.context'
 import Product from '../../types/product.types'
 import CustomButom from '../custom-butom/custom-butom.componensts'
 import { ProductContainer, ProductImage, ProductInfo } from './product-item.styled'
@@ -8,6 +9,11 @@ interface ProductItemProps{
 }
 
 const ProductItem: FunctionComponent<ProductItemProps> = ({ product }) => {
+  const { addProductToCart } = useContext(CartContext)
+
+  const handleAddToCartClick = () => {
+    addProductToCart(product)
+  }
   return (
         <ProductContainer>
             <ProductInfo>
@@ -19,7 +25,7 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({ product }) => {
                 <p>{product.info}</p>
                 <p>R${product.price}</p>
             </ProductInfo>
-            <CustomButom startIcon={undefined} >Adicionar ao Carrinho</CustomButom>
+            <CustomButom startIcon={undefined} onClick={handleAddToCartClick }>Adicionar ao Carrinho</CustomButom>
         </ProductContainer>
   )
 }
