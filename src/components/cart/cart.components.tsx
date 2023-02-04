@@ -6,7 +6,7 @@ import { CartContext } from '../../contexts/cart.context'
 import CartItem from '../cart-item/cart-item.components'
 
 const Cart: FunctionComponent = () => {
-  const { isVisible, products, toggleCart } = useContext(CartContext)
+  const { isVisible, products, toggleCart, productsTotalPrice } = useContext(CartContext)
   return (
     <CartContainer isVisible={isVisible}>
         <CartContent>
@@ -16,7 +16,7 @@ const Cart: FunctionComponent = () => {
 
             {/* Produtos */}
             {products.map(product => <CartItem product={product} key={product.id}/>)}
-            <CartTotal>R$ 12,00</CartTotal>
+            <CartTotal>R$ {productsTotalPrice}</CartTotal>
             <CustomButom startIcon={<BsCartCheck/>}>Ir para o Checkout</CustomButom>
 
         </CartContent>
