@@ -76,7 +76,7 @@ const CartContextProvider: FunctionComponent<children> = ({ children }) => {
   const descreaseProductQuantity = (productId: string) => {
     setProducts(products => products.map((product) => product.id === productId
       ? { ...product, quantity: product.quantity - 1 }
-      : product))
+      : product).filter((product) => product.quantity > 0))
   }
 
   return (
