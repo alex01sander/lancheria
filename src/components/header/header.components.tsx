@@ -21,6 +21,10 @@ const HeaderComponents = () => {
     navigate('/')
   }
 
+  const handleClickDash = () => {
+    navigate('/dash')
+  }
+
   return (
     <>
     <HeaderContainer>
@@ -29,7 +33,7 @@ const HeaderComponents = () => {
             <HeaderItems>Xis</HeaderItems>
             <HeaderItems>Hambuerguer</HeaderItems>
             <HeaderItems>Pizza</HeaderItems>
-            <HeaderItems>Bebidas</HeaderItems>
+            <HeaderItems onClick={handleClickDash}>Dashboard</HeaderItems>
         </HeaderItem>
         {!isAuthenticated && (
           <HeaderTile onClick={handleClickLogin}>Entrar ou Cadastrar</HeaderTile>
