@@ -15,7 +15,7 @@ interface dashProps{
 }
 
 const DashboardPages = () => {
-  const { handleSubmit } = useForm<dashProps>()
+  const { handleSubmit, register } = useForm<dashProps>()
 
   const hanldeDash = async (data : dashProps) => {
     try {
@@ -36,10 +36,21 @@ const DashboardPages = () => {
           <>
             <SignUpContent>
                 <SignUpInputContainer>
-                <p>Nome completo</p>
-               <CustomInput/>
-
+                <p>Url da imagem</p>
+               <CustomInput placeholder='Digite a Url da imagem'
+               {...register('imageUrl', { required: true })} />
                 </SignUpInputContainer>
+                <SignUpInputContainer>
+                <p>Nome do produto</p>
+               <CustomInput placeholder='Digite o Nome do produto'
+               {...register('name', { required: true })} />
+                </SignUpInputContainer>
+                <SignUpInputContainer>
+                <p>Preço do produto</p>
+               <CustomInput placeholder='Digite o Preço do produto'
+               {...register('price', { required: true })} />
+                </SignUpInputContainer>
+
                 <CustomButom startIcon={<MdFastfood size={20}/>}
                 onClick={() => handleSubmit(hanldeDash)()}>Cadastrar</CustomButom>
             </SignUpContent>
